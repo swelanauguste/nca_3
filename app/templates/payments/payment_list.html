@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block head_title %}
+Payments -
+{% endblock head_title %}
+
+
+{% block content %}
+<div class="container my-5">
+    <p class="text-end container">
+        <a class="btn btn-outline-dark rounded-pill"
+            href="{% url 'payments:payment-create' %}">Add a payment</a>
+
+    </p>
+    
+
+    {% for object in object_list %}
+    <a class="text-decoration-none" href="{{ object.get_absolute_url }}">
+        <div class="alert alert-dark rounded-pill shadow py-1 px-5">
+            <span>{{object.client.name}}</span>
+            <div class="small text-muted">
+                <span>${{object.amount}}</span>
+            </div>
+        </div>
+    </a>
+
+    {% endfor %}
+
+
+</div>
+{% endblock content %}

@@ -1,0 +1,11 @@
+html, body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-body p{
+    margin: 0;
+}
+
+.alert .container p{
+    margin: 0;
+}

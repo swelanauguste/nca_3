@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+{% block head_title %}
+{{object}} -
+{% endblock head_title %}
+
+
+{% block content %}
+<div class="container my-5">
+    <div class="container px-5">
+        <div class="row">
+            <div class="col">
+                <div class="card"
+                    style="max-width: 32rem;">
+                    <h2 class="card-header">
+                        {{object}}
+                    </h2>
+                    <div class="card-body">
+                        <p>Client ID: {{object.client_id}}</p>
+                        <p>Client name: {{object.name}}</p>
+                        <p>Gender: {{object.gender}}</p>
+                        <p>DOB: {{object.dob|default:""}}</p>
+                        <p>Phone: {{object.phone|default:""}}</p>
+                        <p>alt phone: {{object.phone1|default:""}}</p>
+                        <p>NIC: {{object.nic|default:""}}</p>
+                    </div>
+                    <div class="card-footer text-end">
+                        <a class="btn btn-outline-dark"
+                            href="{{object.get_absolute_update_url}}">Edit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card"
+                    style="max-width: 32rem;">
+                    <h2 class="card-header">
+                        Payments
+                    </h2>
+                    <div class="card-body">
+                        
+                    </div>
+                    <div class="card-footer text-end">
+                      Total payments: {{object.payments|length}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}

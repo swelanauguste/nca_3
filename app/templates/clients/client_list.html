@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block head_title %}
+Clients -
+{% endblock head_title %}
+
+
+{% block content %}
+<div class="container my-5">
+    <p class="text-end container">
+        <a class="btn btn-outline-dark rounded-pill"
+            href="{% url 'clients:client-create' %}">Add a client</a>
+    </p>
+    {% for object in object_list %}
+    <a class="text-decoration-none"
+        href="{{object.get_absolute_url}}">
+        <div class="alert alert-dark rounded-pill shadow table table-hover">
+            {{object.name}}
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock content %}

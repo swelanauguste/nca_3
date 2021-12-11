@@ -1,0 +1,4 @@
+black==21.8b0
+isort==5.9.3
+pylint-django==2.4.4
+-r prod.txt

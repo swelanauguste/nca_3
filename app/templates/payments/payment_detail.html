@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block head_title %}
+{{object}} -
+{% endblock head_title %}
+
+
+{% block content %}
+<div class="container my-5">
+    <div class="container px-5">
+        <div class="card mx-auto"
+            style="max-width: 32rem;">
+            <h2 class="card-header">
+                {{object}}
+            </h2>
+            <div class="card-body">
+                <p>Client: {{object.client.name}}</p>
+                <p>Amount: {{object.amount}}</p>
+            </div>
+            <div class="card-footer text-end text-muted small">
+                {{object.updated_at}}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
